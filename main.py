@@ -27,8 +27,17 @@ def calc():
     else:
         messagebox.showinfo("How old are you?!?!?!?","You can't write more than 2 numbers!")
 
+#6 Function To backspace        
+def delete():
+    age_input.delete(0,END)
+def backspace():
+    age_input.delete(len(age_input.get())-1,END) 
 
 #7 Button() to call funcion. Button(main window, text inside the button, command is the function done when pressing the button)  
 btn1 = Button(app,text="Calculate Age",bg="yellow",command=calc)## To make the words be printed on the application we use pack() ###
 btn1.pack(side="left")
+btn2 = Button(app,text="Delete",bg="yellow",command=delete)
+btn2.pack(side="right")
+btn3 = Button(app,text="Backspace",bg="yellow",command=backspace)
+btn3.pack(side="right")
 app.mainloop()
